@@ -1,0 +1,3 @@
+#Simple powershell script to identify process and stop process based on name
+Get-Process | Where-Object { $_.Name -match "malware|ransomware|virus|excel" } | ForEach-Object { Sto
+p-Process -Id $_.Id -Force;}
