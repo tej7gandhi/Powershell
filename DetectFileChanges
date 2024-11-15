@@ -1,0 +1,1 @@
+Get-ChildItem -Path "C:\SensitiveDirectory" -Recurse | Where-Object { $_.CreationTime -gt (Get-Date).AddMinutes(-10) -or $_.LastWriteTime -gt (Get-Date).AddMinutes(-10) } | Format-Table Name, FullName, CreationTime, LastWriteTime
