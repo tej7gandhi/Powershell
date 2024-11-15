@@ -1,1 +1,2 @@
+#Script to review file changes within last 10 minutes that file creation and file modification
 Get-ChildItem -Path "C:\SensitiveDirectory" -Recurse | Where-Object { $_.CreationTime -gt (Get-Date).AddMinutes(-10) -or $_.LastWriteTime -gt (Get-Date).AddMinutes(-10) } | Format-Table Name, FullName, CreationTime, LastWriteTime
